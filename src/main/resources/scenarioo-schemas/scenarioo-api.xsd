@@ -7,6 +7,10 @@
 
   <xs:element name="details" type="details" xmlns=""/>
 
+  <xs:element name="diffinfo" type="defaultDiffInfo" xmlns=""/>
+
+  <xs:element name="diffs" type="defaultDiffInfos" xmlns=""/>
+
   <xs:element name="labels" type="labels" xmlns=""/>
 
   <xs:element name="objectDescription" type="objectDescription" xmlns=""/>
@@ -74,6 +78,23 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element ref="diffs" minOccurs="0" xmlns=""/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="defaultDiffInfos">
+    <xs:sequence>
+      <xs:element ref="diffinfo" minOccurs="0" maxOccurs="unbounded" xmlns=""/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="defaultDiffInfo">
+    <xs:sequence>
+      <xs:element name="branch" type="xs:string" minOccurs="0"/>
+      <xs:element name="build" type="xs:string" minOccurs="0"/>
+      <xs:element name="changed" type="xs:int"/>
+      <xs:element name="added" type="xs:int"/>
+      <xs:element name="removed" type="xs:int"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -248,6 +269,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element ref="labels" minOccurs="0" xmlns=""/>
+      <xs:element ref="diffs" minOccurs="0" xmlns=""/>
     </xs:sequence>
   </xs:complexType>
 

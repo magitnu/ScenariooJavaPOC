@@ -6,8 +6,8 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * As a special exception, the copyright holders of this library give you 
- * permission to link this library with independent modules, according 
+ * As a special exception, the copyright holders of this library give you
+ * permission to link this library with independent modules, according
  * to the GNU General Public License with "Classpath" exception as provided
  * in the LICENSE file that accompanied this code.
  * 
@@ -47,6 +47,9 @@ public class Build implements Serializable, Detailable {
 	
 	private Details details = new Details();
 	
+	// TODO pforster: proto
+	private DefaultDiffInfos diffs = new DefaultDiffInfos();
+
 	public Build() {
 	}
 	
@@ -131,6 +134,21 @@ public class Build implements Serializable, Detailable {
 	public void setDetails(final Details details) {
 		Preconditions.checkNotNull(details, "Details not allowed to set to null");
 		this.details = details;
+	}
+
+	/**
+	 * @return the diffs
+	 */
+	public DefaultDiffInfos getDiffs() {
+		return diffs;
+	}
+
+	/**
+	 * @param diffs
+	 *            the diffs to set
+	 */
+	public void setDiffs(final DefaultDiffInfos diffs) {
+		this.diffs = diffs;
 	}
 	
 }

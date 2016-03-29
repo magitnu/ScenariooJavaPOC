@@ -6,8 +6,8 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * As a special exception, the copyright holders of this library give you 
- * permission to link this library with independent modules, according 
+ * As a special exception, the copyright holders of this library give you
+ * permission to link this library with independent modules, according
  * to the GNU General Public License with "Classpath" exception as provided
  * in the LICENSE file that accompanied this code.
  * 
@@ -46,6 +46,8 @@ public class UseCase implements Serializable, Labelable, Detailable {
 	
 	private Details details = new Details();
 	private Labels labels = new Labels();
+	// TODO pforster: proto
+	private DefaultDiffInfos diffs = new DefaultDiffInfos();
 	
 	public UseCase() {
 	}
@@ -138,6 +140,21 @@ public class UseCase implements Serializable, Labelable, Detailable {
 	public void setLabels(final Labels labels) {
 		Preconditions.checkNotNull(labels, "Labels not allowed to set to null");
 		this.labels = labels;
+	}
+
+	/**
+	 * @return the diffs
+	 */
+	public DefaultDiffInfos getDiffs() {
+		return diffs;
+	}
+
+	/**
+	 * @param diffs
+	 *            the diffs to set
+	 */
+	public void setDiffs(final DefaultDiffInfos diffs) {
+		this.diffs = diffs;
 	}
 	
 }
